@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { verifyJWT } from "../middlewares/auth.middleware";
-import { getLikedVideos, toggleCommentLike, toggleTweetLike, toggleVideoLike } from "../controllers/like.controller";
+import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { getLikedVideos, toggleCommentLike, toggleTweetLike, toggleVideoLike } from "../controllers/like.controller.js";
 
 const router = Router()
 router.use(verifyJWT); //apply verify jwt middleware to all routes in this file
