@@ -22,9 +22,17 @@ app.use(morgan("dev")); // HTTP request logger middleware for mode
 // TODO: Make routes and add here
 // routes import
 import userRouter from "./routes/user.route.js"
+import commentRouter from "./routes/comment.route.js"
+import dashboardRouter from "./routes/dashboard.route.js"
+import healthcheckRouter from "./routes/healthcheck.route.js"
+import likeRouter from "./routes/like.route.js"
 
 
 //routes declaration
 app.use("/api/v1/users", userRouter)
+app.use("/api/v1/comment", commentRouter)
+app.use("/api/v1/dashboard", dashboardRouter)
+app.use("api/v1/healthcheck", healthcheckRouter)
+app.use("/api/v1/likes", likeRouter)
 
 export { app };
