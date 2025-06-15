@@ -130,7 +130,7 @@ const getSubscribedChannels = asyncHandler(async (req, res) => {
                 localField: "channel",
                 foreignField: "_id",
                 as: "subscribedChannels",
-                pipelines: [
+                pipeline: [
                     {
                         $lookup: {
                             from: "videos",
@@ -149,9 +149,9 @@ const getSubscribedChannels = asyncHandler(async (req, res) => {
             }
         },
         {
-            $unwind: "$subscribedChannel"
+            $unwind: "$subscribedChannels"
         }, {
-            $projects: {
+            $project: {
                 _id: 1,
                 username: 1,
                 fullName: 1,
