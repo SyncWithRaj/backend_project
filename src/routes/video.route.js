@@ -26,10 +26,10 @@ router
     )
 
 router
-    .route("v/:videoId")
+    .route("/v/:videoId")
     .get(verifyJWT, getVideoById)
     .delete(verifyJWT, deleteVideo)
-    .patch(verifyJWT, upload.single("/thumbnail"), updateVideo);
+    .patch(verifyJWT, upload.single("thumbnail"), updateVideo);
 
 router.route("/toggle/publish/:videoId").patch(verifyJWT, togglePublishStatus)
 

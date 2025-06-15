@@ -103,8 +103,8 @@ const publishAVideo = asyncHandler(async (req, res) => {
         throw new ApiError(400, "All fields are required");
     }
 
-    const videoFileLocalPath = req.fields?.videoFile[0].path;
-    const thumbnailLocalPath = req.fields?.thumbnail[0].path;
+    const videoFileLocalPath = req.files?.videoFile[0].path;
+    const thumbnailLocalPath = req.files?.thumbnail[0].path;
 
     if (!videoFileLocalPath) {
         throw new ApiError(400, "videoFileLocalPath is required")
@@ -280,7 +280,7 @@ const getVideoById = asyncHandler(async (req, res) => {
 
     return res
         .status(200)
-        .jon(new (ApiResponse(200, video[0], "video details fetched successfully")))
+        .json(new ApiResponse(200, video[0], "video details fetched successfully"))
 })
 
 // update video details like title, description, thumbnail
@@ -291,6 +291,7 @@ const updateVideo = asyncHandler(async (req, res) => {
     if (!isValidObjectId(videoId)) {
         throw new ApiError(400, "Invalid videoId")
     }
+    // console.log("videoId from req.params:", videoId)
 
     if (!(title && description)) {
         throw new ApiError(400, "title and description are required")
@@ -298,11 +299,13 @@ const updateVideo = asyncHandler(async (req, res) => {
 
     const video = await Video.findById(videoId)
 
+    console.log("Video owner:", video?.owner?.toString());
     if (!video) {
         throw new ApiError(404, "No video found")
     }
 
-    if (video?.oner.toString() !== req.user?._id.toString()) {
+
+    if (video?.owner.toString() !== req.user?._id.toString()) {
         throw new ApiError(400, "You can't edit this video as you are not the owner")
     }
 
