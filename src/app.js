@@ -29,6 +29,7 @@ import likeRouter from "./routes/like.route.js"
 import playlistRouter from "./routes/playlist.route.js"
 import subscriptionRouter from "./routes/subscription.route.js"
 import tweetRouter from "./routes/tweet.route.js"
+import videoRouter from "./routes/video.route.js"
 
 
 //routes declaration
@@ -40,5 +41,6 @@ app.use("/api/v1/likes", likeRouter)
 app.use("/api/v1/playlist", playlistRouter)
 app.use("/api/v1/subscriptions", subscriptionRouter)
 app.use("/api/v1/tweet", tweetRouter)
+app.use("/api/v1/video", videoRouter)
 
 export { app };
