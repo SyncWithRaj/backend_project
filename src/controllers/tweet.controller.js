@@ -124,7 +124,7 @@ const getUserTweets = asyncHandler(async (req, res) => {
                 from: "likes",
                 localField: "_id",
                 foreignField: "tweet",
-                as: "likesDetails",
+                as: "likeDetails",
                 pipeline: [
                     {
                         $project: {

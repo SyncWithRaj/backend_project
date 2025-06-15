@@ -5,7 +5,8 @@ import { upload } from "../middlewares/multer.middleware.js"
 
 const router = Router()
 
-router.use(verifyJWT, upload.none());
+router.use(verifyJWT, upload.none()); // used for form-data and belowed one used for json data
+// router.use(verifyJWT);
 
 router.route("/:videoId")
     .get(getVideoComments)
