@@ -12,6 +12,11 @@ const toggleSubscription = asyncHandler(async (req, res) => {
         throw new ApiError(400, "Invalid channelId")
     }
 
+    // Prevent subscribing to own channel
+    if (channelId === String(req.user?._id)) {
+        throw new ApiError(400, "You cannot subscribe to your own channel");
+    }
+
     const isSubscribed = await Subscription.findOne({
         subscriber: req.user?._id,
         channel: channelId,
