@@ -28,8 +28,7 @@ npm install
 ```
 
 ## 📌 Credits
-This project is originally created by [Hitesh Choudhary](https://github.com/hiteshchoudhary).  
-Original Repository: https://github.com/hiteshchoudhary/chai-backend  
+The credit goes to [Hitesh Choudhary](https://github.com/hiteshchoudhary) who teach this project on youtube and gave assignments to do.  
 
 I’ve rename it as TwitTube and completed all Todos Assignments given by Hitesh sir.
 
