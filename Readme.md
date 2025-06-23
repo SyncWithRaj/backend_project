@@ -1,6 +1,6 @@
-# 🎬 TwitTube – Backend Project
+# 🎬 TweetTube – Backend Project
 
-A Node.js-based backend API powering the TwitTube platform (a fusion of Twitter and YouTube features), originally built as a starter backend project template.
+A Node.js-based backend API powering the TweetTube platform (a fusion of Twitter and YouTube features), originally built as a starter backend project template.
 
 ## 🔧 Features
 
@@ -30,5 +30,5 @@ npm install
 ## 📌 Credits
 The credit goes to [Hitesh Choudhary](https://github.com/hiteshchoudhary) who teach this project on youtube and gave assignments to do.  
 
-I’ve rename it as TwitTube and completed all Todos Assignments given by Hitesh sir.
+I’ve rename it as TweetTube and completed all Todos Assignments given by Hitesh sir.
 
